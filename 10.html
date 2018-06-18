@@ -1,0 +1,250 @@
+<!doctype html>
+<html>
+<head>
+  <title>WEB1 - HTML</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <script
+  src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="colors.js"></script>
+</head>
+<body>
+  <h1><a href="index.html">Web</a></h1>
+  <input id="night_day" type="button" value="night" onclick="
+    nightDayHandler(this);
+  ">
+    <ol>
+      <li><a href="1.html">HTML</a></li>
+      <li><a href="2.html">CSS</a></li>
+      <li><a href="3.html">JavaScript</a></li>
+      <li><a href="4.html">Languages</a></li>
+      <li><a href="5.html">Chrome DevTools</a></li>
+    </ol>
+    <div id="article">
+      <h2>Data Types</h2>
+      <p>What kind of values can we assign to a variable?<br>
+        Well, there are multiple possibilities:<br>
+        What we call "primitive data types": for example a number, a string, etc. ex:<br>
+        var x = 3; var name = "Buffa";playing cards<br>
+        Objects (everything that is not a  "primitive data type" is an object):<br>
+        var michel = {firstName:'Michel', lastName:'Buffa'};<br>
+        There is a set of "predefined objects" in JavaScript (arrays, functions, etc). We will come back on these later in the course.<br>
+        JavaScript has a small set of primitive data types<br>
+        <ul>
+        <li><a href="11.html">number</a>: 1,2,105,3.14 ...</li><br>
+        <li><a href="12.html">string</a>: 'a', "one", 'two' , 'World Wide Web' ...</li><br>
+        <li>boolean: true / false</li><br>
+        <li>undefined: absent or unknown value</li><br>
+        <li>null: special keyword, meaning no value or empty. The difference from undefined is that when a variable is null, it is still defined.</li><br>
+      </ul>
+      <p>These are the simplest forms of data we can use in programming.
+        Anything that is not listed above is an object (JavaScript objects are covered later in Week 3).
+        You said JavaScript does not have types for variables?
+        No! I said that JavaScript is weakly typed; you do not declare the type of variable. In some other languages (Java language syntax, for instance) instead of var x=2; or let name="Buffa"; you would write int x=2; or String name = "Buffa";, with the datatype explicit in the variable declaration.
+        Knowing the type of a JavaScript variable: the typeof operator
+        The next section of the course talks about "operators" but there is one that is better introduced in this section: the typeof operator, that is useful for knowing the type of a variable depending in its value (possible values: number, string, boolean, undefined, object, or function)
+        We will use it in lots of examples in the next three sections.
+        dynamic typing. You can use the typeof operator to see the "dynamic type of a variable". For example, type let n=3; then typeof n, it will display "number". Then type n="toto"; and typeof n; this time it displays "string"
+        This operator is not often use in JavaScript programs, but it's useful for us, for explaining the data types.
+      </p>
+      <h3>Number Operators:</h3>
+      <p>
+        The following arithmetic operators are binary:<br>
+        +, - , /, *, % (modulo)<br>
+        Example: 7 % 5 equals 2, which is the remainder of the integer division of 7 by 5<br>
+        Note: (7 / 5 = 5 * 1 + 2 ).<br>
+        And there are also unary operators:<br>
+        ++, --, - (the opposite of a number)<br>
+        ++ and -- operators increment or decrement the value of a variable. They can be both prefixed or suffixed, which have different effects:<br>
+        Suffixed ++ adds one to the value of the variable, then returns the old value.<br>
+        Prefixed ++ also adds one to the value, but returns the new value. Both of these must be used with variables.<br>
+      </p>
+      <pre>
+        > var a = 5;
+        undefined
+
+        > a += 3 // equivalent to a = a + 3;
+        8
+
+        > a -= 2; // equivalent to a = a - 2;
+        6
+
+        > a *= 10; // equivalent to a = a * 10;
+        60
+
+        > a /= 5; // equivalent to a = a / 5;
+        12
+
+        > a %= 2; // equivalent to a = a % 2;
+        0
+
+        > // this is normal, as a is even
+      </pre>
+
+      <h3>Strings (part 1):</h3>
+        <p>
+          To declare or manipulate strings you must write them with single quotes ' or double quotes " around them.
+          Single quotes or double quotes are both accepted, and there is no difference between them in JavaScript. However, the community prefers to use single quote for string - this is not a convention, but a recommendation.
+          And finally, you cannot start a string with a single and end with a double quotes, or the opposite.
+        </p>
+        <pre>
+        > "Hello World";
+        "Hello World"
+
+        > "JavaScript Course";
+        "JavaScript Course"
+
+        > 'With simple quotes';
+        "With simple quotes"
+
+        > "Do not mix double and simple quotes'; // here we opened the string with double and closed with simple quotes
+        VM24763:1 Uncaught SyntaxError: Invalid or unexpected token
+        </pre>
+        <p>Image from the devtool console, with the example above:<br>
+          Snapshot of a devtool console: do not mix simple and double quotes<br>
+          There are many reasons to use simple quotes when possible:<br>
+        </p>
+        <ul>
+          <li>Double quotes are used in HTML</li><br>
+          <li>You must hold the Shift key to type "</li><br>
+          <li>Single quotes are easier to read and to type</li><br>
+          <li>To output HTML in JavaScript, single quotes are more useful</li><br>
+        </ul>
+
+      <h3>String operators:</h3>
+      <p>
+        The concatenation operator (+)<br>
+        The operator (+) used with strings is called the concatenation operator, and it allows you to concatenate strings.<br>
+      </p>
+      <pre>
+        //the operator (+)
+        var s1 = 'one';
+        var s2= 'two';
+        var s = s1 + s2;
+        s;
+        // returns 'onetwo'
+        typeof s;
+        //'string'
+      </pre>
+      <p>
+        The shorthand assignment operator (+=)
+        The shorthand assignment operator (+=) can also be used to concatenate strings.
+        <pre>
+          //the assignment operator (+=)
+          var s1 = 'one';
+          var s2 = 'two';
+          s1+= s2; // or directly s1+='two'
+          s1;
+          //returns 'onetwo'
+        </pre>
+
+    <h3>The method concat()</h3>
+      <p>Another way to concatenate strings is the method concat().</p>
+    <pre>
+      //the 'concat' method
+      var s1 = 'one';
+      var s2 ='two';
+      var s = s1.concat(s2);
+      s;
+      //returns 'onetwo'
+    </pre>
+    <p>
+      All the methods shown above can be used with a variable number of arguments:
+    </p>
+      var s1 = 'Hello';
+      s1 = s1 + ' World' + ' JavaScript';
+      var s2 = 'Hello';
+      s2+= ' World' + ' JavaScript';
+      var s3 = 'Hello';
+      s3.concat(' World' , ' JavaScript' );
+      //s1,s2 and s3 return 'Hello World JavaScript'
+    </pre>
+
+    <h3>Converting strings</h3>
+    <p>A String number in an arithmetic expression is converted to Number, unless the formula is a pure addition.</p>
+    <pre>
+      > var s = '1'; s = 3 * s; typeof s;
+      "number"
+
+      > s;
+      3
+
+      > var s = '1'; s++; typeof s;
+      "number"
+
+      > s;
+      2
+
+      > var s = "100"; typeof s;
+      "string"
+
+      > s = s * 1;
+      100
+
+      > typeof s;
+      "number"
+
+      > var d = "101 dalmatians";
+      undefined
+
+      > d * 1;
+      NaN
+    </pre>
+    <p>
+      The above example is shown in the devtools console:<br>
+      Devtool console showing var s = '1'; s = 3 * s; typeof s; "number" s 3 var s = '1'; s++; typeof s; "number" s 2 var s = "100"; typeof s; "string" s = s * 1; 100 typeof s; "number" var d = '101 dalmatiens'; undefined d * 1 NaN<br>
+      How to convert a Number into a String<br>
+      There is trick for converting a Number into a String: we concatenate with an empty string, at the beginning of expression (type this in the devtools):
+    </p>
+    <pre>
+      var n = 1;
+      typeof n;
+      // returns "number"
+      n = "" + n;
+      // returns "1"
+      typeof n;
+      // returns "string"
+    </pre>
+
+    <h3>Special character: the "\"</h3>
+    <p>The \ is useful for "escaping" special characters. Here are a few examples:<br></p>
+    <pre>
+      var s = 'I don\'t know';
+      var s = "I don\'t know"; // here the \ is useless
+      var s = "I don't know";  // same result as previous line
+      var s = '"Hello", he said.'; // ok, double quotes inside single one will be displayed
+      var s = "\"Hello\", he said."; // double quotes inside double quotes need to be escaped
+    </pre>
+    <p>Escaping the escape! Use a double "\"</p>
+    <pre>
+      var s = "1\\2"; s;
+      // returns "1\2"
+    </pre>
+
+    <p>
+      Special characters starting with "\"<br>
+      "\n" for "next line":<br>
+    </p>
+    <pre>
+      var s = '\n1\n2\n3\n';
+      s
+      // returns "
+      1
+      2
+      3
+      "
+      "\r" for "carriage return":
+      var s = '1\r2';
+      var s = '1\n\r2';
+      var s = '1\r\n2';
+      // the three previous lines give :
+      "1
+      2"
+      "\t" for "insert a tabulation":
+      var s = "1\t2"
+      // s is equal to
+      "1 2"
+    </pre>
+
+</body>
+</html>

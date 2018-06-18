@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+  <title>WEB1 - JavaScript</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <script
+  src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="colors.js"></script>
+</head>
+<body>
+  <h1><a href="index.html">WEB</a></h1>
+  <input id="night_day" type="button" value="night" onclick="
+    nightDayHandler(this);
+  ">
+  <ol>
+    <li><a href="1.html">HTML</a></li>
+    <li><a href="2.html">CSS</a></li>
+    <li><a href="1.html">JavaScript</a></li>
+    <li><a href="4.html">Languages</a></li>
+    <li><a href="5.html">Chrome DevTools</a></li>
+  </ol>
+    <h2>Functions</h2>
+
+      <h3>Introduction to Functions:</h3>
+        <p>A function is a block of code designed to perform a task.
+        Functions are like recipes. They accept data, perform actions on that data, and return a result.
+        The beauty of functions is that they allow us to write a block of code once, then we can reuse it over and over without rewriting the same code.
+        Take a look at the code in this exercise. This code turns the calculator on if it is currently off, and turns it off if the calculator is currently on.<br>
+        See if you can figure out how this code works. In the next exercise, we'll walk through it line by line.</p>
+
+      <h3>How does this code work?:</h3>
+        <pre>
+        let calculatorIsOn = false;
+
+        const pressPowerButton = () => {
+          if (calculatorIsOn) {
+            console.log('Calculator turning off.');
+            calculatorIsOn = false;
+          } else {
+            console.log('Calculator turning on.');
+            calculatorIsOn = true;
+          }
+        };
+
+        pressPowerButton();
+        // Output: Calculator turning on.
+
+        pressPowerButton();
+        // Output: Calculator turning off.
+        Let's explore each part in detail.
+        </pre>
+        We created a function named pressPowerButton.<br>
+          <ul>
+            <li>const pressPowerButton creates a variable with a given name written in camelCase.</li><br>
+
+            <li>The variable is then set equal = to a set of parentheses followed by an arrow token () =>, indicating the variable stores a function.
+              This syntax is known as arrow function syntax.</li><br>
+
+            <li>Finally, between the curly braces {} is the function body, or the JavaScript statements that define the function.
+              This is followed by a semi-colon ;. In JavaScript, any code between curly braces is also known as a block.</li><br>
+
+            <li>Inside the function body is an if/else statement.</li><br>
+
+            <li>On the last few lines, we call the function by writing its name followed by a semi-colon pressPowerButton();.
+              This executes the function, running all code within the function body.</li><br>
+
+            <li>We executed the code in the function body twice without having to write the same set of instructions twice.
+              Functions can make code reusable!</li><br>
+          </ul>
+
+       <h3>Parameters:</h3>
+          <p>
+            So far our function has not required any input. We can also write functions that accept data.
+          We do this with parameters. Parameters are variables in a function definition that represent data we can input into the function.</p>
+          <pre>
+          const multiplyByThirteen = (inputNumber) => {
+            console.log(inputNumber * 13);
+          };
+
+          multiplyByThirteen(9);
+          // Output: 117
+          </pre>
+        <p>
+          Let's explore how this function works:<br><br>
+          <ul>
+          <li>We add inputNumber within the parentheses () => of the multiplyByThirteen function. inputNumber is a parameter.</li><br>
+          <li>Inside the multiplyByThirteen() function, we use console.log to print the inputNumber multiplied by 13.</li><br>
+          <li>When we call the multiplyByThirteen() function on the last line, we set the inputNumber parameter. Here, we set it to 9. Then, inside the function block, 9 is multiplied by 13, resulting in 117 printing to the console.</li><br>
+          <li>Note on terminology: inputNumber is a parameter, but when we call multiplyByThirteen(9), the 9 is called an argument. In other words, arguments are provided when you call a function, and parameters receive arguments as their value.
+            When we set the value 9 as the argument, we pass a value to the function.</li><br>
+          </ul>
+          Parameters let us write logic inside functions that are modified when we call the function. This makes functions more flexible.<br><br>
+        </p>
+      <h3>Parameters II:</h3>
+          <p>
+            If we can set one parameter, can we set two?
+          We can set as many parameters as we'd like by adding them when we declare the function, separated by commas, like this:<br><br>
+
+          <pre>
+            const getAverage = (numberOne, numberTwo) => {
+            const average = (numberOne + numberTwo) / 2 ;
+            console.log(average);
+            };
+
+            getAverage(365, 27);
+            // Output: 196
+          </pre>
+
+        <ul>
+          <li>The getAverage() function has two parameters: numberOne and numberTwo, both entered in the parentheses ().</li><br>
+          <li>When we call the getAverage() function on the last line, we include two numbers as the arguments, also separated by commas.
+          In this case, we are telling the function to assign numberOne the value of 365 and numberTwo the value of 27.
+          We are passing in 365 and 27 to the getAverage() function.</li><br>
+          <li>When getAverage() runs, the function knows what numberOne and numberTwo equal since we passed in two arguments when we called the function.
+          Therefore it evaluates (365 + 27) / 2 and stores the result in the average variable. When logged to the console, the value of the average is 196.</li><br>
+        </ul>
+          By adding multiple parameters, we can build functions that are more flexible.
+          Now the function has two variables that we can define when we call the function.<br><br>
+        </p>
+      <h3>Return:</h3>
+         <p>
+           Using console.log() as the result of a function isn't the best use of a function. The purpose of a function is to take some input, perform some task on that input, then return a result.
+          To return a result, we can use the return keyword. Take a look at our function from the last exercise, now re-written slightly:
+            <pre>
+            const getAverage =
+            (numberOne, numberTwo) => {
+              const average = (numberOne + numberTwo) / 2;
+              return average;
+            }
+
+            console.log(getAverage(365, 27));
+            // Output: 196
+            </pre>
+          1. Instead of using console.log() inside the getAverage() function, we used the return keyword. return will take the value of the variable and return it.<br><br>
+          2. On the last line, we called the getAverage() function inside of a console.log() statement, which outputted the result of 196.<br><br>
+          3. This code achieved the same output as before, however now our code is better. Why? If we wanted to use the getAverage() function in another place in our program, we could without printing the result to the console.
+          Using return is generally a best practice when writing functions, as it makes your code more maintainable and flexible.<br><br>
+        </p>
+      
+</body>
+</html>

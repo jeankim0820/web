@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+<head>
+  <title>WEB1 - JavaScript</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <script
+  src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="colors.js"></script>
+</head>
+<body>
+  <h1><a href="index.html">WEB</a></h1>
+  <input id="night_day" type="button" value="night" onclick="
+    nightDayHandler(this);
+  ">
+  <ol>
+    <li><a href="1.html">HTML</a></li>
+    <li><a href="2.html">CSS</a></li>
+    <li><a href="1.html">JavaScript</a></li>
+    <li><a href="4.html">Languages</a></li>
+    <li><a href="5.html">Chrome DevTools</a></li>
+  </ol>
+    <h2>Further JavaScript</h2>
+      <h3>Variables:</h3>
+        <p>Programmers use variables to write code that is easy to understand and repurpose.
+        Creating a variable in JavaScript is called "declaring" a variable.
+        You declare a JavaScript variable with the var keyword:</p>
+        <pre>
+          var pi = 3.14;
+          var x = 5;
+        </pre>
+      <h3>Create a Variable: const</h3>
+          <p>Let's dive in and see a variable in the wild.
+          Here is how you declare a constant variable:</p>
+          <pre>
+            const myName = 'Arya';
+            console.log(myName);
+            // Output: Arya
+          </pre>
+      <h3>Undefined:</h3>
+          <p>What happens if you create a variable, but don't assign it a value?
+          JavaScript creates space for this variable in memory and sets it to undefined.
+          Undefined is the fifth and final primitive data type.
+          JavaScript assigns the undefined data type to variables that are not assigned a value.</p>
+          <pre>
+            let whatAmI;
+          </pre>
+          <p>In the example above, we created the variable whatAmI without any value assigned to it.
+          JavaScript creates the variable and sets it equal to the value undefined.</p>
+      <h3>Mathematical Assignment Operators:</h3>
+          <p>In this exercise, let's consider how we can use variables and math operators to calculate new values and assign them to a variable.
+          Check out the example below:</p>
+          <pre>
+            let x = 4;
+            x = x + 1;
+          </pre>
+          <p>In the example above, we created the variable x with the number 4 assigned to it.
+          On the following line, x = x + 1 increases the value of x from 4 to 5.
+          Notice, on line two in the example above, to increment x by one we had to write the x variable on the left
+          and right side of the assignment operator (=). Using a variable twice in one expression is redundant and confusing.
+          To address this, JavaScript has a collection of built-in mathematical assignment operators that make it easy to calculate a new value and assign it to the same variable without writing the variable twice.
+          See examples of these operators below.</p>
+          <pre>
+            let x = 4;
+            x += 2; // x equals 6
+
+            let y = 4;
+            y -= 2; // y equals 2
+
+            let z = 4;
+            z *= 2; // z equals 8
+
+            let r = 4;
+            r++; // r equals 5
+
+            let t = 4;
+            t--; // t equals 3
+          </pre>
+          <p>In the example above, operators are used to calculate a new value and assign it to the same variable.
+            Let's consider the first three and last two operators separately:</p>
+            <ul>
+              <li>The first three operators (+=, -=, and *=) perform the mathematical operation of the first operator (+, -, or *) using the number on the right, then assign the new value to the variable.</li><br>
+              <li>The last two operators are the increment (++) and decrement (--) operators. These operators are responsible for increasing and decreasing a number variable by one, respectively.</li><br><br>
+            </ul>
+        <h3>String Interpolation:</h3>
+          <p>In previous exercises, we assigned strings to variables.
+           Here, you will learn how to insert the content saved to a variable into a string.
+           The JavaScript term for inserting the data saved to a variable into a string is string interpolation.
+           The + operator, known until now as the addition operator, is used to interpolate (insert) a string variable into a string, as follows:</p>
+           <pre>
+             let myPet = 'armadillo';
+             console.log('I own a pet ' + myPet + '.');
+             // Output: 'I own a pet armadillo.'
+           </pre>
+         <h3>String Interpolation II:</h3>
+           <p>In the newest version of JavaScript (ES6) we can insert variables into strings with ease, by doing two things:</p>
+           <ul>
+             <li>Instead of using quotes around the string, use backticks (this key is usually located on the top of your keyboard, left of the 1 key).</li><br>
+             <li>Wrap your variable with ${myVariable}, followed by a sentence. No +s necessary.</li><br>
+           </ul>
+           <p>ES6 string interpolation is easier than the method you used last exercise.
+             With ES6 interpolation we can insert variables directly into our text.
+             It looks like this:</p>
+          <pre>
+             let myPet = 'armadillo'
+             console.log(`I own a pet ${myPet}.`)
+             // Output: 'I own a pet armadillo.'
+             In the example above, the backticks (`) wrap the entire string.
+             The variable (myPet) is inserted using ${}. The resulting string is:
+             I own a pet armadillo.
+          </pre>
+          <h3>Review Variables:</h3>
+            <ul>
+              <li>Variables hold reusable data in a program.</li>
+              <li>JavaScript will throw an error if you try to reassign const variables.</li>
+              <li>You can reassign variables that you create with the let keyword.</li>
+              <li>You can reassign variables that you create with the let keyword.</li>
+              <li>Unset variables store the primitive data type undefined.</li>
+              <li>Mathematical assignment operators make it easy to calculate a new value and assign it to the same variable.</li>
+              <li>The + operator is used to interpolate (combine) multiple strings.</li>
+              <li>In JavaScript ES6, backticks (`) and ${} are used to interpolate values into a string.</li>
+            </ul>
+          <h3>Indexing:</h3>
+            <p>Did you know that you can access individual characters in a string?
+              To access an individual character, you can use the character's location in the string,
+              called its index. Just put the index of the character inside square brackets (starting with [0] as the first character) immediately after the string. For example:
+            </p>
+            <pre>
+              "James"[0];
+              Returns: "J"
+            </pre>
+
+            <p>or more commonly, you will see it like this, using a variable:</p>
+            <pre>
+              var name = "James";
+              name[0]; "J"
+            </pre>
+          <h3>Semicolons;</h3>
+          <p>One thing to take notice of in all the examples you've seen so far is the use of semicolons ;
+          at the end of each line. Semicolons make it clear where one statement ends and another begins.
+          This is especially handy when multiple lines of code are written on the same line (which is valid JavaScript,
+          but definitely not recommended!). For instance:</p>
+
+          <pre>
+            var totalAfterTax = 53.03
+            var tip = 8 // this is incorrect!
+            Uncaught SyntaxError: Unexpected token var
+
+            vs.
+
+            var totalAfterTax = 53.03;
+            var tip = 8; // this is correct!
+          </pre>
+          <p>
+            Not adding semicolons to the end of each line can cause bugs and errors in your programs.
+            JavaScript does have ways to occasionally predict where semicolons should be,
+            but just like how type coercion can result in some unexpected quirky behavior in JavaScript,
+            it's good practice to not depend on it.</p>
+
+          <h3>Directions:</h3>
+          <p>Define two variables called thingOne and thingTwo and assign them values.
+          Print the values of both variables in one console.log statement using concatenation. For example,<br>
+          <pre>
+          red blue
+          </pre>
+          where "red" is the value of thingOne and "blue" is the value of thingTwo.
+          Don't forget to use semicolons!
+          </p>
+          <h2><a href="8.html">Control Flow</a></h2>
+</body>
+</html>

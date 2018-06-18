@@ -4,14 +4,22 @@
   <title>WEB1 - CSS</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="style.css">
+  <script
+  src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="colors.js"></script>
 </head>
 <body>
   <h1><a href="index.html">WEB</a></h1>
-  <div id="grid">
+  <input id="night_day" type="button" value="night" onclick="
+    nightDayHandler(this);
+  ">
     <ol>
       <li><a href="1.html">HTML</a></li>
       <li><a href="2.html">CSS</a></li>
       <li><a href="3.html">JavaScript</a></li>
+      <li><a href="4.html">Languages</a></li>
+      <li><a href="5.html">Chrome DevTools</a></li>
+    </ol>
     </ol>
     <div id="article">
       <h2>CSS</h2>
@@ -19,21 +27,28 @@
         Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation
         of a document written in a markup language like HTML.
         CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.
-        CSS stands for Cascading Style Sheets.<br>
-
-        CSS describes how HTML elements are to be displayed on screen, paper, or in other media.<br>
-
-        CSS saves a lot of work. It can control the layout of multiple web pages all at once.<br><br>
-
-        CSS can be added to HTML elements in 3 ways:<br>
-        <ul>
-          <li>Inline - by using the style attribute in HTML elements</li>
-          <li>Internal - by using a style element in the head section</li>
-          <li>External - by using an external CSS file</li>
-        </ul>
-        The most common way to add CSS, is to keep the styles in separate CSS files. However, here we will use inline and internal styling, because this is easier to demonstrate, and easier for you to try it yourself.
+        CSS stands for Cascading Style Sheets.
       </p>
-      </div>
+      <h3>CSS syntax</h3>
+      <p>In this example rule we can see:</p>
+        <ul>
+          <li>CSS selector</li></br>
+          <li>Declaration block denoted by the opening and closing {}<br><br>
+            declaration { property: value;}</li></br>
+          <li>Declarations, each formed with a structure of<br><br>
+            body {<br>
+              font-size: 16px;<br>
+              color: red;<br>
+            }</li></br>
+        </ul>
+        <h3>CSS Declarations</h3>
+        <ul>
+          <li>Properties:<br>
+            Predefined terms that will change the way elements look and behave.</li></br>
+          <li>Values:<br>
+            Properties can have either specific possible values or  take a broad range of possible values.</li></br>
+          <li>Declaration:<br>
+            Together, each property-value pair form a declaration.</li></br>
     </div>
 </body>
 </html>
